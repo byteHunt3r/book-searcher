@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="book"
+            type="com.nkengbeza.books.model.Book" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.BookDetail">
+
+            <ImageView
+                android:id="@+id/ivBookCover"
+                android:layout_width="145dp"
+                android:layout_height="139dp"
+                android:layout_marginStart="@dimen/book_detail_std_margin"
+                android:layout_marginTop="@dimen/book_detail_std_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
+                android:imageUrl="@{book.thumbnail}" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/book_detail_std_margin"
+                android:layout_marginTop="@dimen/book_detail_std_margin"
+                android:layout_marginEnd="@dimen/book_detail_std_margin"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@{book.title}"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSubTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/book_detail_std_margin"
+                android:layout_marginTop="@dimen/book_detail_std_margin"
+                android:layout_marginEnd="@dimen/book_detail_std_margin"
+                android:text="@{book.subTitle}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <TextView
+                android:id="@+id/tvAuthors"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/book_detail_std_margin"
+                android:layout_marginTop="@dimen/book_detail_std_margin"
+                android:textColor="@color/colorAccent"
+                android:text="@{book.authors}"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/ivBookCover"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubTitle" />
+
+            <TextView
+                android:id="@+id/tvPublisher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/book_detail_std_margin"
+                android:layout_marginTop="@dimen/book_detail_std_margin"
+                android:text="@{book.publisher}"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/ivBookCover"
+                app:layout_constraintTop_toBottomOf="@+id/tvAuthors" />
+
+            <TextView
+                android:id="@+id/tvPublishedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/book_detail_std_margin"
+                android:layout_marginTop="@dimen/book_detail_std_margin"
+                android:text="@{book.publishedDate}"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/ivBookCover"
+                app:layout_constraintTop_toBottomOf="@+id/tvPublisher" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/book_detail_std_margin"
+                android:layout_marginTop="@dimen/book_detail_std_margin"
+                android:layout_marginEnd="@dimen/book_detail_std_margin"
+                android:layout_marginBottom="@dimen/book_detail_std_margin"
+                android:text="@{book.description}"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivBookCover" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>
